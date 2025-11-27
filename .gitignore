@@ -4,6 +4,7 @@ target/
 !**/src/test/**/target/
 .kotlin
 *.local.properties
+notas.txt
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
