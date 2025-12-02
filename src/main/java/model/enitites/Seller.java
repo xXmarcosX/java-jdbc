@@ -1,7 +1,8 @@
 package model.enitites;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Seller implements Serializable {
@@ -10,10 +11,12 @@ public class Seller implements Serializable {
     private Integer Id;
     private String Name;
     private String Email;
-    private Date BirthDate;
+    private LocalDate BirthDate;
     private Double BaseSalary;
 
     private Department department;
+
+    private static final DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public Seller() {}
 
@@ -21,7 +24,7 @@ public class Seller implements Serializable {
             Integer id,
             String name,
             String email,
-            Date birthDate,
+            LocalDate birthDate,
             Double baseSalary,
             Department department
     ) {
@@ -57,11 +60,11 @@ public class Seller implements Serializable {
         Email = email;
     }
 
-    public Date getBirthDate() {
-        return BirthDate;
+    public String getBirthDate() {
+        return BirthDate.format(fmt);
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         BirthDate = birthDate;
     }
 
@@ -99,7 +102,7 @@ public class Seller implements Serializable {
                 "Id=" + Id +
                 ", Name='" + Name + '\'' +
                 ", Email='" + Email + '\'' +
-                ", BirthDate=" + BirthDate +
+                ", BirthDate=" + getBirthDate() +
                 ", BaseSalary=" + BaseSalary +
                 ", Department=" + getDepartment().toString() +
                 '}';
