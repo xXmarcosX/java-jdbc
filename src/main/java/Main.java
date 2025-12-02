@@ -8,6 +8,7 @@ public class Main {
         SellerDao sellerDao = DaoFactory.createSellerDao();
         Seller seller = sellerDao.findById(11);
 
+        //TEST FIND BY ID
         System.out.println(seller);
     }
 }
