@@ -3,7 +3,8 @@ import model.dao.SellerDao;
 import model.enitites.Department;
 import model.enitites.Seller;
 
-import java.util.ArrayList;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 public class Main {
@@ -17,12 +18,23 @@ public class Main {
         List<Seller> sellers2 = sellerDao.findAll();
 
         //TEST FIND BY ID
-//        System.out.println(seller);
+        System.out.println("Test ID");
+        System.out.println(seller);
 
         //TEST FIND BY DEPARTMENT
-//        sellers.forEach(System.out::println);
+        System.out.println("\n\nTest find by department");
+        sellers.forEach(System.out::println);
 
         //TEST FIND ALL
+        System.out.println("\n\nTest find all");
         sellers2.forEach(System.out::println);
+
+        //TEST INSERT
+        System.out.println("\n\nTest find insert");
+        Seller newSeller = new Seller(null, "Chris", "chris@gmail.com", new Date(), 4000.0, dep);
+
+        sellerDao.insert(newSeller);
+
+        System.out.println("New seller ID: " + newSeller.getId());
     }
 }
