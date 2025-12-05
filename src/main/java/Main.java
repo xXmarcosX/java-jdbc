@@ -86,6 +86,12 @@ public class Main {
         System.out.println(depDao.findById(newDep.getId()));
 
         //TEST DELETE DEPARTMENT
+        System.out.println("\n\nTest Delete Department");
 
+        depDao.deleteById(newDep.getId());
+
+        System.out.println(depDao.findById(newDep.getId()));
+
+        System.out.println("\n");
     }
 }
