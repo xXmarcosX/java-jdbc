@@ -68,5 +68,13 @@ public class Main {
         List<Department> deps = depDao.findAll();
 
         deps.forEach(System.out::println);
+
+        //TEST INSERT DEPARTMENT
+        System.out.println("\n\nTEST INSERT DEPARTMENT");
+
+        Department newDep = new Department(null, "Toys");
+        depDao.insert(newDep);
+
+        System.out.println("New Department ID: " + newDep.getId());
     }
 }
