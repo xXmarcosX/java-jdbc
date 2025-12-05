@@ -30,11 +30,26 @@ public class Main {
         sellers2.forEach(System.out::println);
 
         //TEST INSERT
-        System.out.println("\n\nTest find insert");
+        System.out.println("\n\nTest insert");
         Seller newSeller = new Seller(null, "Chris", "chris@gmail.com", new Date(), 4000.0, dep);
 
         sellerDao.insert(newSeller);
 
         System.out.println("New seller ID: " + newSeller.getId());
+
+        //TEST UPDATE
+        System.out.println("\n\nTest update");
+        seller.setBaseSalary(6000.0);
+
+        sellerDao.update(seller);
+
+        System.out.println(seller.getBaseSalary());
+
+        //TEST DELETE
+        System.out.println("\n\nTest Delete");
+
+        sellerDao.deleteById(newSeller.getId());
+
+        System.out.println(sellerDao.findById(newSeller.getId()));
     }
 }
