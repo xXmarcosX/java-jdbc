@@ -76,5 +76,16 @@ public class Main {
         depDao.insert(newDep);
 
         System.out.println("New Department ID: " + newDep.getId());
+
+        //TEST UPDATE DEPARTMENT
+        System.out.println("\n\nTEST UPDATE DEPARTMENT");
+
+        newDep.setName("TVs");
+        depDao.update(newDep);
+
+        System.out.println(depDao.findById(newDep.getId()));
+
+        //TEST DELETE DEPARTMENT
+
     }
 }
