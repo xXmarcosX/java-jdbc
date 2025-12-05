@@ -6,6 +6,7 @@ import model.enitites.Department;
 import model.enitites.Seller;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -59,6 +60,13 @@ public class Main {
         System.out.println("\n");
 
         //TEST GET DEPARTMENT BY ID
+        System.out.println("\n\nTest FIND BY ID");
         System.out.println(depDao.findById(1));
+
+        //TEST FIND ALL DEPARTMENTS
+        System.out.println("\n\nTest FIND ALL");
+        List<Department> deps = depDao.findAll();
+
+        deps.forEach(System.out::println);
     }
 }
